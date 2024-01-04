@@ -1,0 +1,8 @@
+.ul
+{
+    width: 60%;
+    max-height: 5rem;
+    margin: 1rem auto;
+    text-align: center;
+    list-style-position: outside;
+}

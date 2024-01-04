@@ -1,0 +1,28 @@
+.card-head
+{
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.card-img-div
+{
+    display: inline-block;
+    width: 150px;
+}
+
+.card-img
+{
+    margin: 1rem auto;
+    width: 100%;
+}
+
+.card-h3
+{
+    font-size: 2.25rem;
+}
+
+.card-span
+{
+    font-weight: 300;
+    font-size: 1.5rem;
+}
