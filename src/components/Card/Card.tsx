@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 import styles from './Card.module.css';
 import CardHead from '../CardHead/CardHead';
 import CardBottom from '../CardBottom/CardBottom';
+import CardButton from '../CardButton/CardButton';
 
 interface Props
 {
@@ -12,10 +13,12 @@ interface Props
     imageSrc: string;
     headingThree: string;
     colorCode: string;
+    colorCodeTwo: string;
     imgMarginTop: number;
     h4Content: string;
     liContent: string[];
     liStyleImg: string;
+    buttonContent: string;
     priceText?: string;
 }
 
@@ -26,10 +29,12 @@ function Card({
     imageSrc,
     headingThree,
     colorCode,
+    colorCodeTwo,
     imgMarginTop,
     h4Content,
     liContent,
     liStyleImg,
+    buttonContent,
     priceText,
 }: Props): ReactNode
 {
@@ -65,6 +70,13 @@ function Card({
                 liStyleImg={ liStyleImg }
             >
             </CardBottom>
+
+            <CardButton
+                colorCode={ colorCode }
+                colorCodeTwo={ colorCodeTwo }
+            >
+                { buttonContent }
+            </CardButton>
         </div>
     );
 }

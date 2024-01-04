@@ -9,16 +9,16 @@ interface Props
 
 function List({
     liContent,
-    liStyleImg,
+    // liStyleImg,
 }: Props): ReactNode
 {
     const style = {
-        listStyleImage: `url(${liStyleImg})`,
+        // listStyleImage: `url(${liStyleImg})`,
     }
 
     return (
         <ul
-            className={ styles.ul }
+            className={`${ styles.ul }`}
         >
             { liContent.map((li, index) =>
             {

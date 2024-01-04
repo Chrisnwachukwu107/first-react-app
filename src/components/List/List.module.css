@@ -2,7 +2,8 @@
 {
     width: 60%;
     max-height: 5rem;
-    margin: 1rem auto;
+    margin: 0rem auto;
+    margin-bottom: 2rem;
     text-align: center;
     list-style-position: outside;
 }
