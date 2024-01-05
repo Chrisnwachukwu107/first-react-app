@@ -3,7 +3,6 @@ import styles from './CardHead.module.css';
 
 interface Props
 {
-    // children: ReactNode;
     headingTwo: string;
     imageSrc: string;
     headingThree: string;
