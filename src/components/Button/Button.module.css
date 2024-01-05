@@ -13,3 +13,39 @@
 {
     cursor: pointer;
 }
+
+.button-start-up
+{
+    background-color: #5A5679;
+    border: 2px solid #302B51;
+}
+
+.button-pro
+{
+    background-color: #FF7473;
+    border: 2px solid #D43534;
+}
+
+.button-enterprise
+{
+    background-color: #47B8E0;
+    border: 2px solid #2F9ADB;
+}
+
+.button-start-up:hover
+{
+    background-color: rgba(90, 86, 121, .8);
+    border: 2px solid rgba(48, 43, 81, .8);
+}
+
+.button-pro:hover
+{
+    background-color: rgba(255, 116, 115, .8);
+    border: 2px solid rgba(212, 53, 52, .8);
+}
+
+.button-enterprise:hover
+{
+    background-color: rgba(71, 184, 224, .8);
+    border: 2px solid rgba(47, 154, 219, .8);
+}

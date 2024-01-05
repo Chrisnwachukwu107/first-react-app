@@ -1,28 +1,53 @@
+import React from 'react';
 import styles from './Button.module.css';
-import { ReactNode } from 'react';
+import { ReactNode, useEffect } from 'react';
 
 interface Props
 {
     children: ReactNode;
-    colorCode: string;
-    colorCodeTwo: string;
+    headingTwo: string;
+    // doSomething: () => void;
+    whenButtonIsClicked: (message: string) => void;
+    message: string;
+    whenButtonIsHovered: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 export default function Button({
     children,
-    colorCode,
-    colorCodeTwo,
+    headingTwo,
+    whenButtonIsClicked,
+    message,
+    whenButtonIsHovered,
 }: Props): ReactNode
 {
-    const style = {
-        backgroundColor: colorCode,
-        border: `2px solid ${colorCodeTwo}`
-    }
+    useEffect(() =>
+    {
+        const button: HTMLElement | null = document.getElementById('my-id');
+        button?.addEventListener('click', (): void =>
+        {
+            whenButtonIsClicked(message);
+        });
+    },
+    [])
 
     return (
         <button
-            className={ styles.button }
-            style={ style }
+            // id="my-id"
+            className={ `${styles.button} ${styles[`button-${headingTwo.toLowerCase()}`]}` }
+            onClick={ () =>
+            {
+                whenButtonIsClicked(message);
+            } }
+            onMouseOver={ whenButtonIsHovered }
+            // onClick={ () =>
+            // {
+            //     doSomething();
+            // } }
+            // onClick={ function()
+            // {
+            //     console.log("Do something else");
+            //     doSomething();
+            // } }
         >
             { children }
         </button>

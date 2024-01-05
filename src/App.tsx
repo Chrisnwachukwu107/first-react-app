@@ -1,9 +1,21 @@
+import React from 'react';
 import { ReactNode } from 'react';
 import styles from './App.module.css';
 import Heading from './components/Heading/Heading';
 import Paragraph from './components/Paragraph/Paragraph';
 import CardSection from './components/CardSection/CardSection';
 import Card from './components/Card/Card';
+
+function doSomething(message: string): void
+{
+  alert(message);
+}
+
+function hoverFunc(event: React.MouseEvent<HTMLButtonElement>): void
+{
+  console.log(event);
+  console.log(event.target);
+}
 
 export default function App(): ReactNode | JSX.Element
 {
@@ -90,12 +102,14 @@ export default function App(): ReactNode | JSX.Element
               headingThree={ card.headingThree }
               imgMarginTop={ card.imgMarginTop }
               colorCode={ card.colorCode }
-              colorCodeTwo={ card.colorCodeTwo }
               h4Content={ card.h4Content }
               liContent={ card.liContent }
               liStyleImg={ card.liStyleImg }
               buttonContent={ card.buttonContent }
               className = { `card-${card.headingTwo.toLowerCase()}` }
+              whenButtonIsClicked={ doSomething }
+              message='my message'
+              whenButtonIsHovered={ hoverFunc }
               priceText={ card.priceText }
             />
           );

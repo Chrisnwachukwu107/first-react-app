@@ -1,3 +1,4 @@
+import React from 'react';
 import { ReactNode } from 'react';
 import styles from './Card.module.css';
 import CardHead from '../CardHead/CardHead';
@@ -10,13 +11,15 @@ interface Props
     imageSrc: string;
     headingThree: string;
     colorCode: string;
-    colorCodeTwo: string;
     imgMarginTop: number;
     h4Content: string;
     liContent: string[];
     liStyleImg: string;
     buttonContent: string;
     className: string;
+    whenButtonIsClicked: (message: string) => void;
+    message: string;
+    whenButtonIsHovered: (event: React.MouseEvent<HTMLButtonElement>) => void;
     priceText?: string;
 }
 
@@ -25,16 +28,19 @@ function Card({
     imageSrc,
     headingThree,
     colorCode,
-    colorCodeTwo,
     imgMarginTop,
     h4Content,
     liContent,
     liStyleImg,
     buttonContent,
     className,
+    whenButtonIsClicked,
+    message,
+    whenButtonIsHovered,
     priceText,
 }: Props): ReactNode
 {
+    
     return (
         <div
             className={ `${styles.card} ${styles[className]} px-2` }
@@ -61,8 +67,13 @@ function Card({
             />
 
             <Button
-                colorCode={ colorCode }
-                colorCodeTwo={ colorCodeTwo }
+                headingTwo={ headingTwo }
+                whenButtonIsClicked={ function()
+                {
+                    whenButtonIsClicked(headingTwo)
+                } }
+                message= { message }
+                whenButtonIsHovered={ whenButtonIsHovered }
             >
                 { buttonContent }
             </Button>
