@@ -27,9 +27,6 @@ function CardHead({
         marginTop: `${imgMarginTop}rem`,
     }
 
-    if (priceText !== '') priceText = ` /${priceText}`;
-    else priceText = '';
-
     return (
         <div
             className={ `${styles["card-head"]}` }
