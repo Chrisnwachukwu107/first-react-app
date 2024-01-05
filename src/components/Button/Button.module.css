@@ -8,3 +8,8 @@
     font-size: 1.1rem;
     color: white;
 }
+
+.button:hover
+{
+    cursor: pointer;
+}

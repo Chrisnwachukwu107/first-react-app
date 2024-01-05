@@ -5,8 +5,10 @@ import Paragraph from './components/Paragraph/Paragraph';
 import CardSection from './components/CardSection/CardSection';
 import Card from './components/Card/Card';
 
-function App(): ReactNode
+export default function App(): ReactNode | JSX.Element
 {
+  const showPricingCard = true;
+
   const cardList = [
     {
       headingTwo: 'Start-Up',
@@ -58,20 +60,25 @@ function App(): ReactNode
       buttonContent: 'CHOOSE',
     }
   ];
-  console.log(cardList[0].headingTwo.toLowerCase());
+
+  const main: JSX.Element =
+  <main>
+    <Heading>
+      CHOOSE YOUR PLAN
+    </Heading>
+    
+    <Paragraph>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat repudiandae velit, tempora soluta quas alias laboriosam dolores!
+    </Paragraph>
+  </main>
 
   return (
     <div
       className={`${ styles.container }`}
     >
-      <Heading>
-        CHOOSE YOUR PLAN
-      </Heading>
-
-      <Paragraph>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat repudiandae velit, tempora soluta quas alias laboriosam dolores!
-      </Paragraph>
-
+      { main }
+  
+      { showPricingCard &&
       <CardSection>
         { cardList.map((card, index) =>
         {
@@ -92,10 +99,10 @@ function App(): ReactNode
               priceText={ card.priceText }
             />
           );
-        }) }
+        })
+        }
       </CardSection>
+      }
     </div>
   );
 }
-
-export default App;

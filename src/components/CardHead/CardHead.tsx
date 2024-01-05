@@ -17,7 +17,7 @@ function CardHead({
     headingThree,
     colorCode,
     imgMarginTop,
-    priceText = '',
+    priceText,
 }: Props): ReactNode
 {
     const style = {
@@ -54,11 +54,11 @@ function CardHead({
                 className={ `${styles["card-h3"]}` }
             >
                 { headingThree }
-                <span
+                { priceText && <span
                     className={ `${styles["card-span"]}` }
                 >
                     { priceText }
-                </span>
+                </span> }
             </h3>
         </div>
     );
