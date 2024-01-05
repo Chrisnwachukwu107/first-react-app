@@ -1,4 +1,4 @@
-import styles from './CardButton.module.css';
+import styles from './Button.module.css';
 import { ReactNode } from 'react';
 
 interface Props
@@ -8,7 +8,7 @@ interface Props
     colorCodeTwo: string;
 }
 
-function CardButton({
+export default function Button({
     children,
     colorCode,
     colorCodeTwo,
@@ -16,9 +16,6 @@ function CardButton({
 {
     const style = {
         backgroundColor: colorCode,
-        color: 'white',
-        fontWeight: 600,
-        fontSize: '1.1rem',
         border: `2px solid ${colorCodeTwo}`
     }
 
@@ -31,5 +28,3 @@ function CardButton({
         </button>
     );
 }
-
-export default CardButton;

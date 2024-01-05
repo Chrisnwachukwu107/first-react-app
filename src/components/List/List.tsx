@@ -4,16 +4,20 @@ import styles from './List.module.css';
 interface Props
 {
     liContent: string[];
-    liStyleImg: string;
+    colorCode: string;
 }
 
 function List({
     liContent,
-    // liStyleImg,
+    colorCode,
 }: Props): ReactNode
 {
     const style = {
-        // listStyleImage: `url(${liStyleImg})`,
+        listStyle: 'none',
+    }
+
+    const imgStyle = {
+        backgroundColor: colorCode,
     }
 
     return (
@@ -25,8 +29,15 @@ function List({
                 return (
                 <li
                     style={ style }
+                    className={ `${styles["card-li"]}` }
                     key={ index }
                 >
+                    <img
+                        src='/images/check.png'
+                        alt=''
+                        className={ `${styles["card-li-img"]}` }
+                        style={ imgStyle }
+                    />
                     {li}
                 </li>
                 );

@@ -2,13 +2,10 @@ import { ReactNode } from 'react';
 import styles from './Card.module.css';
 import CardHead from '../CardHead/CardHead';
 import CardBottom from '../CardBottom/CardBottom';
-import CardButton from '../CardButton/CardButton';
+import Button from '../Button/Button';
 
 interface Props
 {
-    // children: ReactNode
-    width: number;
-    height: number;
     headingTwo: string;
     imageSrc: string;
     headingThree: string;
@@ -19,12 +16,11 @@ interface Props
     liContent: string[];
     liStyleImg: string;
     buttonContent: string;
+    className: string;
     priceText?: string;
 }
 
 function Card({
-    width,
-    height,
     headingTwo,
     imageSrc,
     headingThree,
@@ -35,18 +31,13 @@ function Card({
     liContent,
     liStyleImg,
     buttonContent,
+    className,
     priceText,
 }: Props): ReactNode
 {
-    const style: React.CSSProperties = {
-        width: width,
-        height: height,
-    }
-
     return (
         <div
-            className={ `${styles.card} px-2 py-2` }
-            style={ style }
+            className={ `${styles.card} ${styles[className]} px-2` }
         >
             <CardHead
                 headingTwo={ headingTwo }
@@ -55,11 +46,10 @@ function Card({
                 priceText={ priceText }
                 colorCode = { colorCode }
                 imgMarginTop={ imgMarginTop }
-            >
-            </CardHead>
+            />
 
             <p
-                className={ `${styles["card-p"]}` }
+                className={ `${styles["card-p"]} my-2` }
             >
             </p>
             
@@ -68,15 +58,14 @@ function Card({
                 colorCode={ colorCode }
                 liContent={ liContent }
                 liStyleImg={ liStyleImg }
-            >
-            </CardBottom>
+            />
 
-            <CardButton
+            <Button
                 colorCode={ colorCode }
                 colorCodeTwo={ colorCodeTwo }
             >
                 { buttonContent }
-            </CardButton>
+            </Button>
         </div>
     );
 }

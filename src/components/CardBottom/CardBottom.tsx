@@ -14,7 +14,6 @@ function CardBottom({
     h4Content,
     colorCode,
     liContent,
-    liStyleImg
 }: Props): ReactNode
 {
     const style = {
@@ -26,16 +25,15 @@ function CardBottom({
             style={ style }
         >
             <h4
-                className={ styles["card-bottom-h4"] }
+                className={ `${styles["card-bottom-h4"]} my-2` }
             >
                 { h4Content }
             </h4>
 
             <List
                 liContent = { liContent }
-                liStyleImg = { liStyleImg }
-            >
-            </List>
+                colorCode = { colorCode }
+            />
         </div>
     );
 }
