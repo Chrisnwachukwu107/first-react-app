@@ -41,7 +41,7 @@ export default function App(): ReactNode | JSX.Element
       ],
       liStyleImg: '/images/pro-check.png',
       buttonContent: 'CHOOSE',
-      priceText: 'Year',
+      priceText: '/Year',
     },
     {
       headingTwo: 'Enterprise',
